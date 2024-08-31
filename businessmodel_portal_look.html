@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>power Bi Dashboard Generating Portal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            font-size: 16px;
+        }
+        .main-banner {
+            background: linear-gradient(to right, #0066cc, #003366);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        .main-banner h1 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+        .main-banner p {
+            font-size: 18px;
+        }
+        .main-banner .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ffffff;
+            color: #0066cc;
+            border: none;
+        }
+        .main-banner .btn:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .features-section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .features-section h2 {
+            color: #343a40;
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .features-section .feature {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .features-section .feature:hover {
+            transform: scale(1.05);
+        }
+        .features-section i {
+            font-size: 48px;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        .features-section h4 {
+            font-size: 22px;
+        }
+        .features-section p {
+            font-size: 16px;
+            color: #666666;
+        }
+        .qna-chatbot-section {
+            padding: 50px 0;
+            text-align: center;
+            display: none; /* Initially hidden */
+        }
+        .qna-chatbot-section h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .qna-chatbot-section iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .latest-updates, .business-insights {
+            padding: 50px 0;
+        }
+        .latest-updates h2, .business-insights h2 {
+            color: #343a40;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .latest-updates p, .business-insights p {
+            color: #666666;
+        }
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+        }
+        .footer img {
+            width: 20px;
+            height: 20px;
+        }
+        .btn-primary {
+            background-color: #0066cc;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Power Bi Dashboard Generator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Login/Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-banner">
+        <h1>Welcome to Power BI Analysis Dashboard Generator</h1>
+        <p>Your one-stop solution for Power BI Dashboard creation and analysis</p>
+        <a href="#" class="btn" onclick="showQnAChatbot()">Start Now</a>
+    </div>
+
+    <div class="container features-section">
+        <h2>Key Features</h2>
+        <div class="row">
+            <div class="col-md-4 feature" onclick="showQnAChatbot()">
+                <i class="fas fa-cogs"></i>
+                <h4>Easy Business Model Creation</h4>
+                <p>Create and edit business models effortlessly.</p>
+            </div>
+            <div class="col-md-4 feature" onclick="showQnAChatbot()">
+                <i class="fas fa-chart-line"></i>
+                <h4>In-Depth Analysis and Recommendations</h4>
+                <p>Receive detailed analysis and actionable recommendations.</p>
+            </div>
+            <div class="col-md-4 feature" onclick="showQnAChatbot()">
+                <i class="fas fa-users"></i>
+                <h4>User-Friendly Interface</h4>
+                <p>Enjoy a seamless and intuitive user experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container qna-chatbot-section" id="qna-chatbot-section">
+        <h2>Business Model QnA</h2>
+        <iframe src="URL_OF_YOUR_CHATBOT_API" title="Assistant Chatbot"></iframe>
+    </div>
+
+    <div class="container latest-updates">
+        <h2>Latest Updates</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>New Features Released</h4>
+                <p>Check out the latest features added to our portal.</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Upcoming Webinar on Business Model Innovation</h4>
+                <p>Join our webinar to learn about the latest trends in business model innovation.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Contact Information: Address, Phone, Email</p>
+        <p>Follow us on:
+            <a href="#"><img src="https://via.placeholder.com/20?text=FB" alt="Facebook"></a>
+            <a href="#"><img src="https://via.placeholder.com/20?text=TW" alt="Twitter"></a>
+            <a href="#"><img src="https://via.placeholder.com/20?text=LI" alt="LinkedIn"></a>
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showQnAChatbot() {
+            document.getElementById('qna-chatbot-section').style.display = 'block';
+            window.scrollTo(0, document.getElementById('qna-chatbot-section').offsetTop);
+        }
+    </script>
+</body>
+</html>

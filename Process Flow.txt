@@ -1,0 +1,61 @@
+Overview: The project aims to create a portal where users can upload CSV files, have the data analyzed by a 
+trained assistant chatbot, generate visualizations, compile everything into a PDF report, and download the report. 
+Below is the detailed process flow, explaining each step and the requirements involved.
+
+    1. User Portal
+        Purpose: Provide an interface for users to upload CSV files, trigger data analysis, 
+        and download reports.
+        Requirements:HTML for structure, CSS for styling, JavaScript for functionality and API integration
+        Frontend Elements:File upload input, Upload and analyze button, Output area for displaying download link.
+
+    2. Data Upload
+        Purpose: Enable users to upload CSV files to the server.
+        Requirements: HTML form with file input, JavaScript to handle file upload via API
+        Backend (Flask) Handling: 
+            Endpoint: /upload-data, Receives file, assigns unique ID, saves file on the server,
+            Returns unique data ID to the frontend
+
+        Technologies:HTML, JavaScript for frontend, Flask for backend, uuid for generating unique IDs.
+
+    3. Data Analysis Trigger
+        Purpose: Trigger data analysis on the uploaded file.
+        Requirements:JavaScript to send a request with data ID to the backend
+        Backend Handling:
+            Endpoint: /analyze-data
+            Reads the CSV file using pandas
+            Preprocesses data (e.g., cleaning, summarizing)
+
+        Technologies:JavaScript for frontend, Flask, pandas for backend
+
+4. Data Visualization
+        Purpose: Generate charts and visualizations based on the data.
+        Requirements: Generate visualizations (e.g., histograms, heatmaps)
+        Backend Handling: Uses matplotlib and seaborn for generating charts
+        Saves generated charts as images on the server
+
+        Technologies: matplotlib, seaborn for data visualization
+
+5. AI Analysis with ChatGPT
+        Purpose: Use a trained assistant chatbot to analyze the data and generate textual explanations.
+        Requirements:Send data summary to ChatGPT, Receive and process the response
+        Backend Handling:Calls the OpenAI API with the data summary, Receives analysis and recommendations 
+        from ChatGPT
+
+        Technologies:OpenAI API, Flask for backend integration
+
+6. PDF Report Generation
+        Purpose: Compile the textual analysis and visualizations into a well-formatted PDF report.
+        Requirements:Combine text and images into PDF form and Save the report on the server
+        Backend Handling:Uses ReportLab to create PDF, Integrates textual analysis and charts into the PDF,
+        Saves the PDF report with a unique ID
+
+        Technologies:ReportLab for PDF generation, Flask for backend handling
+
+7. Report Download
+        Purpose: Provide a link for users to download the generated PDF report.
+        Requirements:Display download link in the frontend, Handle file download via the backend
+        Backend Handling:
+            Endpoint: /download-report/<report_id>
+            Serves the PDF report to the user
+
+        Technologies:JavaScript for frontend, Flask for backend
